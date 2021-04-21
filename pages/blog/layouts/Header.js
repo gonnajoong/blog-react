@@ -7,6 +7,10 @@ class Header extends Component {
         this.state = {};
     }
 
+    componentDidMount() {
+
+    }
+
     render() {
         return(
             <header id="gjHeader">

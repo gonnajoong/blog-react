@@ -84,13 +84,13 @@ module.exports = {
             }
 
             // Instance Methods
-            // extend(Model.prototype, mixin.instanceMethods);
+            // extend(Model.prototype, mixins.instanceMethods);
             if (modelSchema.methods && modelSchema.methods.instanceMethods) {
                 extend(Model.prototype, modelSchema.methods.instanceMethods);
             }
 
             // Class Methods
-            // extend(Model, mixin.classMethods);
+            // extend(Model, mixins.classMethods);
             if (modelSchema.methods && modelSchema.methods.classMethods) {
                 extend(Model, modelSchema.methods.classMethods);
             }

@@ -1,0 +1,82 @@
+#gjAlertWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: $z-index-alert;
+  @media screen and (min-width: 769px) {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility .3s, opacity .3s;
+    -moz-transition: visibility .3s, opacity .3s;
+    -ms-transition: visibility .3s, opacity .3s;
+    -o-transition: visibility .3s, opacity .3s;
+    transition: visibility .3s, opacity .3s;
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
+#gjAlert {
+  position: relative;
+  margin: auto;
+  border-radius: 3px;
+  width: 300px;
+  background-color: white;
+  overflow: hidden;
+  @media screen and (min-width: 769px) {
+    @include modal();
+  }
+  section {
+    position: relative;
+    &:nth-of-type(1) {
+      padding: 32px;
+    }
+    &:nth-of-type(2) {
+      @include after-clear();
+    }
+  }
+  p {
+    font-size: 18px;
+    text-align: center;
+    white-space: pre-wrap;
+    line-height: 1.5;
+  }
+  button {
+    height: 64px;
+    line-height: 64px;
+    font-size: 18px;
+    float: left;
+    -webkit-transition: background-color .1s;
+    -moz-transition: background-color .1s;
+    -ms-transition: background-color .1s;
+    -o-transition: background-color .1s;
+    transition: background-color .1s;
+    &:first-of-type {
+      width: 50%;
+      background-color: #e8e8e8;
+    }
+    &:last-of-type {
+      width: 50%;
+      background-color: $theme-color;
+      color: white;
+    }
+    &:first-of-type:last-of-type {
+      width: 100%;
+      background-color: #e8e8e8;
+      color: #000;
+    }
+  }
+}
